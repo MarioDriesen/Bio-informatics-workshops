@@ -53,19 +53,11 @@ Learn how to inspect, search, edit, and organize files using standard Linux tool
 
 ---
 
-### 4. Using Remote Systems
-
-Connect to remote servers and clusters using SSH and tools such as MobaXterm.
-
-> ./04-Using-Remote-Systems/
-
----
-
-### 5. Introduction to Bash
+### 4. Introduction to Bash
 
 Learn the basics of shell scripting and automation.
 
-> ./05-Introduction-to-Bash/
+> ./04-Introduction-to-Bash/
 
 ---
 
