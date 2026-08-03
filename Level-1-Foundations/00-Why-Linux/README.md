@@ -222,6 +222,127 @@ This makes it especially useful for:
 
 ## 5. A Short History of Linux
 
+Linux did not appear out of nowhere. It grew out of decades of work on Unix, academic computing, free software, and open collaboration.
+
+### 5.1 Unix: the starting point
+
+The history of Linux starts with **Unix**, an operating system developed at Bell Labs in the late 1960s and early 1970s.
+
+Unix became influential because it was designed around several powerful ideas:
+
+- Keep tools small and focused.
+- Let tools work together.
+- Treat files as a central concept.
+- Use text as a common format.
+- Make the system useful for programmers.
+
+Another important reason Unix spread widely was the **C programming language**. C made Unix easier to modify and move to different types of computers. This portability helped Unix spread through universities, research institutes, and companies.
+
+Many ideas that bioinformaticians use today, such as command-line tools, pipes, scripts, and remote servers, come from the Unix tradition.
+
+---
+
+### 5.2 From Unix to free software
+
+During the early years of computing, software was often shared more freely between researchers and programmers. Over time, however, more software became proprietary and restricted.
+
+In response to this, Richard Stallman started the **GNU Project** in 1983. The goal of GNU was to create a complete Unix-like operating system that users were free to use, study, modify, and share.
+
+GNU produced many important tools that are still used on Linux systems today, including:
+
+- compilers
+- editors
+- command-line utilities
+- shells
+- development tools
+
+The GNU Project also created the **GNU General Public License (GPL)**. This license allows software to be shared and modified, but requires modified versions to keep the same freedoms.
+
+This idea became very important for the growth of Linux and open-source software.
+
+---
+
+### 5.3 BSD and the Unix legal problems
+
+Another important Unix-like system was **BSD**, the Berkeley Software Distribution, developed at the University of California, Berkeley.
+
+BSD contributed many important improvements to Unix, especially in networking. However, in the early 1990s, legal disputes between Unix System Laboratories and BSD developers created uncertainty around BSD-based systems.
+
+This legal uncertainty slowed BSD adoption at an important moment.
+
+At the same time, another Unix-like project was beginning to gain attention: Linux.
+
+---
+
+### 5.4 The missing piece! 
+
+In 1991, Linus Torvalds, a student at the University of Helsinki, began writing his own Unix-like kernel for personal computers.
+
+A **kernel** is the core part of an operating system. It manages hardware, memory, processes, files, and communication between software and the computer.
+
+Torvalds announced his project online and invited feedback from others. What started as a personal hobby project quickly attracted contributors from around the world.
+
+The Linux kernel became especially powerful when combined with GNU tools. Together, the Linux kernel and GNU software formed a complete free operating system.
+
+This is why some people use the name **GNU/Linux**, although in everyday language most people simply say **Linux**.
+
+---
+
+### 5.5 The rise of Linux distributions
+
+A kernel alone is not enough to make a usable operating system.
+
+A complete Linux system usually includes:
+
+- the Linux kernel
+- GNU command-line tools
+- a shell, such as Bash
+- system libraries
+- package managers
+- installation tools
+- applications
+
+A complete packaged version of Linux is called a **Linux distribution**, or **distro**.
+
+Examples include:
+
+- Debian
+- Ubuntu
+- Fedora
+- Rocky Linux
+- Arch Linux
+
+Distributions made Linux easier to install, update, and use. They also introduced package managers, which help users install software and handle dependencies automatically.
+
+For bioinformatics, this is important because many tools depend on other software libraries. Package managers and environment managers make it easier to install and reproduce computational workflows.
+
+---
+
+### 5.6 Why this history matters for bioinformatics
+
+Linux became important in bioinformatics because it inherited several useful traditions from Unix and free software:
+
+- command-line tools
+- automation through scripting
+- open-source development
+- remote server access
+- reproducible workflows
+- compatibility with high-performance computing systems
+
+Most modern bioinformatics pipelines are built on these ideas.
+
+When you learn Linux, you are not just learning an operating system. You are learning the working style behind much of modern computational biology.
+
+---
+
+### Key Takeaways
+
+- Unix introduced many ideas that are still central to Linux.
+- The GNU Project created many free software tools used in Linux systems.
+- The GPL helped protect the freedom to use, modify, and share software.
+- Linux began in 1991 as a kernel developed by Linus Torvalds.
+- Linux distributions combine the kernel with tools, libraries, package managers, and applications.
+- The Unix/Linux tradition strongly shaped modern bioinformatics workflows.
 
 ---
 
