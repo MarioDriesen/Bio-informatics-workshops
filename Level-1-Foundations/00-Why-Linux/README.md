@@ -275,11 +275,11 @@ ATCGATCGATCGATCGAT
 IIIIIIIIIIIIIIIIII
 ```
 A FASTQ file stores sequencing reads in blocks of four lines:
-```markdown 
-!!! note
+
+**note**
 FASTQ files are usually very large. Opening them in a normal text editor can be slow or even crash the editor.
 Command-line tools such as `head`, `tail`, `less`, and `wc` allow you to inspect large files safely.
-```
+
 A sequence identifier.
 The DNA sequence.
 A separator line, usually starting with +.
