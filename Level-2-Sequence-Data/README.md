@@ -38,7 +38,8 @@ fastqc SRR35192589_1.fastq SRR35192589_2.fastq -o results/
 ```
 <img width="1126" height="680" alt="fastqcfiles" src="https://github.com/user-attachments/assets/5dc9598e-665f-4c19-9a41-4c925d4bf5d9" />
 
-
+> [!WARNING]
+> Warning: This picture is currently under development.
 ---
 
 ### 2. Adapter & quality trimming (Trim Galore)
