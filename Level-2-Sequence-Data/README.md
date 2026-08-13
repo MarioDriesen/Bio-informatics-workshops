@@ -20,7 +20,7 @@ After completing this level, you should be able to:
 #### 0.a Installation of tools + Creation of the environment
 ```
 conda create -n amplicon-tutorial -c bioconda -c conda-forge fastqc trim-galore pear sra-tools vsearch
-_Installing seqkit might be useful_
+* Installing seqkit might be useful *
 
 conda activate amplicon-tutorial
 ```
