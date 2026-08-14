@@ -41,7 +41,7 @@ fastq-dump --split-files SRR12345678
 fastqc SRR35192589_1.fastq SRR35192589_2.fastq -o results/
 ```
 <img width="983" height="435" alt="fastqc" src="https://github.com/user-attachments/assets/cc1fe362-090d-45db-aa50-fdbc8160ded0" />
-> [!Note]
+> [!NOTE]
 > This image is currently being created.
 ---
 
