@@ -1,4 +1,4 @@
-# Level 2 - Amplicon Sequencing Analysis
+<img width="1142" height="677" alt="fastqcfiles" src="https://github.com/user-attachments/assets/a099555e-339a-45c5-9852-14bd1275e2c0" /># Level 2 - Amplicon Sequencing Analysis
 
 This second level guides through a small and complete workflow for amplicon sequencing data (16S/18S/ITS)
 
@@ -36,8 +36,7 @@ fastq-dump --split-files SRR12345678
 ```
 fastqc SRR35192589_1.fastq SRR35192589_2.fastq -o results/
 ```
-![Uploading image.png…]()
-
+<img width="1142" height="677" alt="fastqcfiles" src="https://github.com/user-attachments/assets/d317f1eb-3f19-4909-ac8c-f1163b6a2588" />
 
 > [!WARNING]
 > Warning: This picture is currently under development.
