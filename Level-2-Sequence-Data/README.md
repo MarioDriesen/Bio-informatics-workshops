@@ -6,12 +6,16 @@ This second level guides through a small and complete workflow for amplicon sequ
 
 After completing this level, you should be able to:
 
--
--
--
--
--
-
+- Processing FASTQ/SRA data
+- Assessing sequence quality
+- Performing trimming and filtering
+- Merging paired-end reads
+- Performing denoising and dereplication
+- Generating OTUs/ASVs
+- Detecting chimeras
+- Performing taxonomic classification
+- Building an abundance table
+- Using command-line bioinformatics tools
 ---
 
 ## Workshop Contents
