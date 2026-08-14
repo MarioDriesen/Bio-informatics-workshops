@@ -16,6 +16,7 @@ After completing this level, you should be able to:
 - Performing taxonomic classification
 - Building an abundance table
 - Using command-line bioinformatics tools
+- 
 ---
 
 ## Workshop Contents
