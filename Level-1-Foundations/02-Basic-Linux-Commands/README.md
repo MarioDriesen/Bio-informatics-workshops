@@ -7,14 +7,38 @@ Here below are some of them :) :
 * [Eco_flow_command_line_basics](https://eco-flow.github.io/training/commandline/)
 * [CodeAcademy](https://www.codecademy.com/learn/learn-the-command-line) - Learn the command line
 * [TeachingUnix](https://info-ee.surrey.ac.uk/Teaching/Unix/) - Another Unix Tutorial
-  
+or follow the tutorial made by Maxence Jacquet below. 
+
+Documentation on basic linux commands: 
 * [BasicCommands](http://mally.stanford.edu/~sr/computing/basic-unix.html) - List of common commands
 
 # Gameshell
 
-If you are a gamer like me, this is a fun way to take your first steps into Linux :) 
+If you are a gamer like me, this is a fun way to take your first steps into Linux! 🎮
 
-How to install and play it: 
+GameShell is an educational game in which you progress by solving challenges using Linux commands. Instead of reading a tutorial, you learn by exploring directories, manipulating files, and completing increasingly complex tasks in a real shell environment.
+
+It is a great way to practice:
+
+- Navigating the filesystem (`cd`, `ls`, `pwd`)
+- Working with files and folders (`cp`, `mv`, `rm`, `mkdir`)
+- Searching and filtering information
+- Using pipes and redirection
+- Writing simple shell commands and scripts
+
+## Installation
+
+GameShell can be installed locally or played directly in a GitHub Codespace.
+
+Official repository:
+
+- https://github.com/phyver/GameShell
+
+### Playing in a GitHub Codespace
+
+1. Fork or open the GameShell repository.
+2. Click **Code** → **Codespaces** → **Create codespace on main**.
+3. Once the terminal opens, run:
 
 
 # 1. Learning the Linux shell
@@ -25,6 +49,7 @@ How to install and play it:
 
 ---
 
+# Tutorial made by Maxence Jacquet 
 
 ## What is the Linux Shell?
 
