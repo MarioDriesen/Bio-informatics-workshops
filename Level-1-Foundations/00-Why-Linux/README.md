@@ -134,7 +134,7 @@ The shell allows users to:
 This is one of the reasons Linux is so powerful in bioinformatics. Many analyses involve large numbers of files, repeated commands, and automated workflows.
 
 ### 2.5 Applications and Utilities
-<img width="1280" height="720" alt="Slide12" src="https://github.com/user-attachments/assets/66a341c2-8cb3-41f7-baef-17e3a57cffb1" />
+<img width="1280" height="720" alt="Slide7" src="https://github.com/user-attachments/assets/dce217c3-2cbd-484f-bfbe-7768d3ed4aed" />
 
 Applications and utilities are programs that run on top of the operating system.
 
