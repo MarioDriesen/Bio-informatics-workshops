@@ -70,6 +70,8 @@ Shell
 Applications and utilities
 ```
 ### 2.1 Hardware
+<img width="1280" height="720" alt="Slide3" src="https://github.com/user-attachments/assets/c22aeb7a-f991-4d55-80e4-998625c984d5" />
+
 The hardware layer consists of the physical components of the computer, such as:
 
 - CPU
@@ -81,6 +83,8 @@ The hardware layer consists of the physical components of the computer, such as:
 The operating system needs to communicate with this hardware in a controlled and reliable way.
 
 ### 2.2 Kernel
+<img width="1280" height="720" alt="Slide4" src="https://github.com/user-attachments/assets/c337f067-6bd2-4a8a-9090-ee4e3fda0330" />
+
 The kernel is the central part of the operating system.
 
 It acts as a bridge between software and hardware. User programs do not usually communicate directly with the hardware. Instead, they ask the kernel to do this for them.
@@ -97,6 +101,8 @@ The kernel manages:
 This is important because many programs may be running at the same time. The kernel makes sure that these programs can share the computer safely and efficiently.
 
 ### 2.3 System Libraries
+<img width="1280" height="720" alt="Slide5" src="https://github.com/user-attachments/assets/1236e8c5-5916-46b7-8a8f-ff9477f782cd" />
+
 System libraries are collections of pre-written code that programs can use to perform common tasks.
 
 For example, libraries can provide functions for:
@@ -110,6 +116,8 @@ For example, libraries can provide functions for:
 Instead of every program having to write these functions from scratch, system libraries provide reusable building blocks.
 
 ### 2.4 Shell
+<img width="1280" height="720" alt="Slide6" src="https://github.com/user-attachments/assets/0f29f4f6-7b83-4061-8368-c5daa64e8301" />
+
 The shell is a program that allows users to interact with the operating system by typing commands.
 
 In this workshop, we will mainly use Bash, one of the most widely used Unix/Linux shells.
@@ -126,6 +134,8 @@ The shell allows users to:
 This is one of the reasons Linux is so powerful in bioinformatics. Many analyses involve large numbers of files, repeated commands, and automated workflows.
 
 ### 2.5 Applications and Utilities
+<img width="1280" height="720" alt="Slide12" src="https://github.com/user-attachments/assets/66a341c2-8cb3-41f7-baef-17e3a57cffb1" />
+
 Applications and utilities are programs that run on top of the operating system.
 
 Examples include:
@@ -256,6 +266,8 @@ GNU produced many important tools that are still used on Linux systems today, in
 - shells
 - development tools
 
+<img width="1280" height="720" alt="Slide12" src="https://github.com/user-attachments/assets/128eb4a7-f76e-44e4-ac86-0afb5274f61b" />
+
 The GNU Project also created the **GNU General Public License (GPL)**. This license allows software to be shared and modified, but requires modified versions to keep the same freedoms.
 
 This idea became very important for the growth of Linux and open-source software.
@@ -275,6 +287,8 @@ At the same time, another Unix-like project was beginning to gain attention: Lin
 ---
 
 ### 5.4 The missing piece! 
+<img width="1280" height="720" alt="Slide14" src="https://github.com/user-attachments/assets/7a0d2f5d-f3ec-44f2-afa0-21d5cad8c976" />
+
 
 In 1991, Linus Torvalds, a student at the University of Helsinki, began writing his own Unix-like kernel for personal computers.
 
@@ -289,6 +303,8 @@ This is why some people use the name **GNU/Linux**, although in everyday languag
 ---
 
 ### 5.5 The rise of Linux distributions
+<img width="1280" height="720" alt="Slide15" src="https://github.com/user-attachments/assets/02acbb58-ed68-4fd4-b010-b752e52bcbd2" />
+
 
 A kernel alone is not enough to make a usable operating system.
 
@@ -415,7 +431,7 @@ example output:
 ```text
 4000 reads.fastq
 ```
-ecause each FASTQ read uses four lines, this file would contain 1000reads. 
+because each FASTQ read uses four lines, this file would contain 1000reads. 
 
 ### 6.3 Linux is Standard on Clusters and Supercomputers
 
