@@ -5,6 +5,7 @@ But why make it, if so many already exist!
 Here below are some of them :) : 
 * [Linux_Unix_tutorial](https://www.tutorialspoint.com/unix/index.htm)
 * [Eco_flow_command_line_basics](https://eco-flow.github.io/training/commandline/)
+* [tutorial_by_ubuntu](https://ubuntu.com/desktop/docs/en/latest/tutorial/the-linux-command-line-for-beginners/)
 * [CodeAcademy](https://www.codecademy.com/learn/learn-the-command-line) - Learn the command line
 * [TeachingUnix](https://info-ee.surrey.ac.uk/Teaching/Unix/) - Another Unix Tutorial
 or follow the tutorial made by Maxence Jacquet below. 
