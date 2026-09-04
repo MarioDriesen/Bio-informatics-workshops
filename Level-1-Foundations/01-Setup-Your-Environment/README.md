@@ -16,13 +16,31 @@ you can of course choose to install another Linux distro, this is the one we use
 ### Ubuntu Installation Guide
 Follow the official Ubuntu documentation:
 
-https://ubuntu.com/desktop/docs/en/latest/tutorial/install-ubuntu-desktop/
+[Ubuntu](https://ubuntu.com/desktop/docs/en/latest/tutorial/install-ubuntu-desktop/)
 
 You can choose between:
 
 - **Install Ubuntu permanently** alongside or instead of your current operating system.
 - **Try Ubuntu from a USB drive** without making permanent changes to your computer.
 
+### test
+
+When you open Ubuntu for the first time you will see that Ubuntu has a nice "user-interface" that is very similar to Windows and therefore is very user friendly. 
+Once installed: Explore Ubuntu :)
+
+We will not use this nice user-interface because our final goal is to learn to work on clusters, to do all of our heavy work. 
+Clusters do not have a nice virtual interface and rely solely on command line terminals. This is the real "code" running, always in the background. 
+Here we can write out everything we want to do "scripting"
+
+open a terminal: crtl + Alt +  T (You will need this for the rest of the tutorial) 
+test by typing: 
+```
+pwd
+```
+you should see the current directory path you are in. 
+/home/yourname 
+
+you are ready for the next part :) 
 ---
 
 ## Option 2: Windows Subsystem for Linux (WSL)
@@ -89,13 +107,21 @@ From PowerShell
 ```
 wsl
 ```
+test by typing: 
+```
+pwd
+```
+you should see the current directory path you are in. 
+/home/yourname 
+
 ---
 
 ## Option 3: Using your institution's cluster or codespaces
 
 Codespaces is a very nice way to learn the basics of Linux and working inside Github. 
 The downside, you cannot run big tasks, it needs credits, storage is limited. 
-https://docs.github.com/en/codespaces/quickstart
+nice set up: [Eco_flow_set_up_codespaces](https://eco-flow.github.io/training/setup/)
+documentation by github: [Codespaces_GitHub](https://docs.github.com/en/codespaces/quickstart)
 
 Cluster: 
 The cluster is a great place and since the end of this workshop series includes Nextflow which are heavy pipelines (depending on the data) we highly recommend using it. 
