@@ -30,7 +30,7 @@ After completing this level, you should be able to:
 conda create -n amplicon-tutorial -c bioconda -c conda-forge fastqc seqkit trim-galore pear sra-tools vsearch
 conda activate amplicon-tutorial
 ```
-*Installing seqkit might be useful*
+*SeqKit might be helpful. Indeed, Seqkit is an ultrafast, lightweight "Swiss army knife" for manipulating FASTA and FASTQ files, making it exceptionally useful for amplicon profiling and other marker-gene sequencing workflows*
 
 #### 0.b Downloading data
 ```
@@ -46,7 +46,7 @@ fastq-dump --split-files SRR12345678
 ### 1. Quality check (FastQC)
 
 ```
-fastqc SRR35192589_1.fastq SRR35192589_2.fastq -o results/
+fastqc SRR12345678_1.fastq SRR12345678_2.fastq -o results/
 ```
 <img width="983" height="435" alt="fastqc" src="https://github.com/user-attachments/assets/cc1fe362-090d-45db-aa50-fdbc8160ded0" />
 
@@ -57,7 +57,7 @@ fastqc SRR35192589_1.fastq SRR35192589_2.fastq -o results/
 ### 2. Adapter & quality trimming (Trim Galore)
 
 ```
-trim_galore --paired SRR35192589_1.fastq SRR35192589_2.fastq -o results/
+trim_galore --paired SRR12345678_1.fastq SRR12345678_2.fastq -o results/
 ```
 
 ---
@@ -65,8 +65,8 @@ trim_galore --paired SRR35192589_1.fastq SRR35192589_2.fastq -o results/
 ### 3. Paired-end merging (PEAR)
 
 ```
-pear -f results/SRR35192589_1_val_1.fq.gz \
-     -r results/SRR35192589_2_val_2.fq.gz \
+pear -f results/SRR12345678_1_val_1.fq.gz \
+     -r results/SRR12345678_2_val_2.fq.gz \
      -o results/merged
 ```
 
