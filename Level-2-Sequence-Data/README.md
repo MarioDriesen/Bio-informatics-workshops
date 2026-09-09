@@ -1,4 +1,7 @@
-# Level 2 - Amplicon Sequencing Analysis
+> [!WARNING]
+> Warning: This section is currently being updated.
+---
+> # Level 2 - Amplicon Sequencing Analysis
 
 This second level guides through a small and complete workflow for amplicon sequencing data (16S/18S/ITS)
 
