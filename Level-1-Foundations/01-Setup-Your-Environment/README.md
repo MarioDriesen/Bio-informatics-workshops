@@ -2,7 +2,13 @@
 
 Before starting the Linux Shell exercises, you need access to a Linux environment running Bash. There are three recommended ways to do this:
 
-## Option 1: Install Ubuntu on Your Computer (Permanent or Live USB)
+## Option 1: Using Github codespaces
+We advice trying to use the github codespaces for the entirety of this tutorial and workshop. Everything will be made with codespaces in mind. 
+I added the other options because these will be the final workways you will work in. Codespaces is nice to learn and try out things but in theend you will work on big data and use your own PC/ HPC. 
+
+nice set up: [Eco_flow_set_up_codespaces](https://eco-flow.github.io/training/setup/)
+documentation by github: [Codespaces_GitHub](https://docs.github.com/en/codespaces/quickstart)
+## Option 2: Install Ubuntu on Your Computer (Permanent or Live USB)
 
 If you want the full Linux experience, you can install Ubuntu directly on your computer or run it from a USB drive without modifying your existing operating system.
 you can of course choose to install another Linux distro, this is the one we use. 
@@ -116,16 +122,10 @@ you should see the current directory path you are in.
 
 ---
 
-## Option 3: Using your institution's cluster or codespaces
+## Option 3: Using your institution's cluster 
 
-Codespaces is a very nice way to learn the basics of Linux and working inside Github. 
-The downside, you cannot run big tasks, it needs credits, storage is limited. 
-nice set up: [Eco_flow_set_up_codespaces](https://eco-flow.github.io/training/setup/)
-documentation by github: [Codespaces_GitHub](https://docs.github.com/en/codespaces/quickstart)
-
-Cluster: 
 The cluster is a great place and since the end of this workshop series includes Nextflow which are heavy pipelines (depending on the data) we highly recommend using it. 
-All the commands, apps, etc. you can do on your local Linux through WSL or a local installed distro. 
+All the commands, apps, etc. you can do on your local Linux through WSL or a local installed distro can be executed on the cluster. 
 The instructions and commands are the same on the cluster whith some minor changes to the bash files but we will explain this later on. 
 I cannot provide a text here for all the clusters in the world and how to acces them. As an example I post a link to the guidelines of the Walloon ones below: 
 
