@@ -1,0 +1,38 @@
+{
+    "name": "Eco-Flow Training",
+    "image": "ghcr.io/chriswyatt1/training:v6",
+    "remoteUser": "vscode",
+        "features": {
+            "ghcr.io/devcontainers/features/docker-in-docker:2": {
+                "moby": false
+            }
+        },
+    "postCreateCommand": "printf 'unset JAVA_TOOL_OPTIONS\\ncd /workspaces/training/eco-flow-training\\n' >> $HOME/.bashrc && cat ${containerWorkspaceFolder}/.bash_profile >> $HOME/.bash_profile",
+    "postStartCommand": "docker pull -q nf-core/rnaseq || true",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "codezombiech.gitignore",
+                "cssho.vscode-svgviewer",
+                "esbenp.prettier-vscode",
+                "EditorConfig.EditorConfig",
+                "nextflow.nextflow",
+                "streetsidesoftware.code-spell-checker",
+                "ms-vscode.live-server",
+                "tomoki1207.pdf",
+                "barnim.markdown-code-copy-button"
+            ],
+            "settings": {
+                // Don't prompt learners about extension telemetry mid-lesson.
+                "nextflow.telemetry.enabled": false,
+                "redhat.telemetry.enabled": false,
+                // Keep the workspace quiet on first open.
+                "workbench.secondarySideBar.defaultVisibility": "hidden",
+                "workbench.startupEditor": "none",
+                "chat.commandCenter.enabled": false,
+                "git.openRepositoryInParentFolders": "never",
+                "extensions.ignoreRecommendations": true
+            }
+        }
+    }
+}
