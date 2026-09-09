@@ -27,7 +27,7 @@ After completing this level, you should be able to:
 ### 0. Requirements and download SRA data
 #### 0.a Installation of tools + Creation of the environment
 ```
-conda create -n amplicon-tutorial -c bioconda -c conda-forge fastqc trim-galore pear sra-tools vsearch
+conda create -n amplicon-tutorial -c bioconda -c conda-forge fastqc seqkit trim-galore pear sra-tools vsearch
 conda activate amplicon-tutorial
 ```
 *Installing seqkit might be useful*
