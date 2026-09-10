@@ -71,8 +71,12 @@ fastqc data/SRR12345678_1.fastq \
 ### 2. Adapter & quality trimming (Trim Galore)
 
 ```
-trim_galore --paired SRR12345678_1.fastq \
-            SRR12345678_2.fastq -o results/
+trim_galore --paired \
+            --quality 20 \
+            --length 20 \
+            -o results/trimmed/ \
+            data/SRR12345678_1.fastq \
+            data/SRR12345678_2.fastq
 ```
 
 ---
