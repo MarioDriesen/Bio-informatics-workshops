@@ -27,7 +27,7 @@ After completing this level, you should be able to:
 ### 0. Requirements and download SRA data
 #### 0.a Installation of tools + Creation of the environment
 ```
-conda create -n amplicon-tutorial -c bioconda -c conda-forge fastqc seqkit trim-galore pear sra-tools vsearch
+conda create -n amplicon-tutorial -c bioconda -c conda-forge fastqc seqkit trim-galore cutadapt pear sra-tools vsearch
 conda activate amplicon-tutorial
 ```
 *SeqKit might be helpful. Indeed, Seqkit is an ultrafast, lightweight "Swiss army knife" for manipulating FASTA and FASTQ files, making it exceptionally useful for amplicon profiling and other marker-gene sequencing workflows*
@@ -80,8 +80,31 @@ trim_galore --paired \
 ```
 
 ---
+### 2.bis Primer Removal (?)
 
-### 3. Paired-end merging (PEAR)
+```
+cutadapt \
+    -g ^FORWARD_PRIMER \
+    -G ^REVERSE_PRIMER \
+    -o results/trimmed/SRR12345678_1.primertrimmed.fastq \
+    -p results/trimmed/SRR12345678_2.primertrimmed.fastq \
+    results/trimmed/SRR12345678_1_val_1.fq \
+    results/trimmed/SRR12345678_2_val_2.fq
+```
+
+---
+
+### 3. Check the quality after trimming
+```
+fastqc \
+    results/trimmed/SRR12345678_1.primertrimmed.fastq \
+    results/trimmed/SRR12345678_2.primertrimmed.fastq \
+    -o results/fastqc_trimmed/
+```
+
+---
+
+### 4. Paired-end merging (PEAR)
 
 ```
 pear -f results/SRR12345678_1_val_1.fq.gz \
@@ -91,14 +114,14 @@ pear -f results/SRR12345678_1_val_1.fq.gz \
 
 ---
 
-### 4. OTU/ASV Workflow with VSEARCH
-#### 4.a Dereplication
+### 5. OTU/ASV Workflow with VSEARCH
+#### 5.a Dereplication
 ```
 vsearch --derep_fulllength results/merged.assembled.fastq \
         --output results/derep.fasta \
         --sizeout
 ```
-#### 4.b Denoising (UNOISE3 for zOTUs/ASVs)
+#### 5.b Denoising (UNOISE3 for zOTUs/ASVs)
 ```
 vsearch --cluster_unoise results/derep.fasta \
         --minsize 8 \
@@ -110,7 +133,7 @@ vsearch --cluster_size results/derep.fasta \
         --id 0.97 \
         --centroids results/otus.fasta
 ```
-#### 4.c Chimera Removal
+#### 5.c Chimera Removal
 ```
 vsearch --uchime3_denovo results/zotus.fasta \
         --nonchimeras results/zotus.nochim.fasta
@@ -118,15 +141,15 @@ vsearch --uchime3_denovo results/zotus.fasta \
 
 ---
 
-### 5. Taxonomic classification (SINTAX in VSEARCH).
+### 6. Taxonomic classification (SINTAX in VSEARCH).
 > [!WARNING]
 > You need a reference database (e.g., SILVA, RDP, UNITE) formatted for VSEARCH. here you can find the databases https://zenodo.org/records/14930035
-#### 5.a Generate a fasta file from a fastq file
+#### 6.a Generate a fasta file from a fastq file
 ```
 vsearch --fastq_filter results/merged.assembled.fastq \
         --fastaout results/merged.assembled.fasta
 ```
-#### 5.b Generate the abundance table
+#### 6.b Generate the abundance table
 ```
 vsearch --usearch_global results/merged.assembled.fastq \
         --db results/otus.nochim.fasta \
