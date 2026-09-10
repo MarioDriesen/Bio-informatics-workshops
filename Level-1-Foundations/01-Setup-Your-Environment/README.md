@@ -2,12 +2,142 @@
 
 Before starting the Linux Shell exercises, you need access to a Linux environment running Bash. There are three recommended ways to do this:
 
-## Option 1: Using Github codespaces
-We advice trying to use the github codespaces for the entirety of this tutorial and workshop. Everything will be made with codespaces in mind. 
-I added the other options because these will be the final workways you will work in. Codespaces is nice to learn and try out things but in theend you will work on big data and use your own PC/ HPC. 
+## Before You Begin
 
+To follow this tutorial, make sure you have:
+
+- A reliable internet connection.
+- A modern web browser such as Chrome, Edge, Brave, or Firefox.
+- A GitHub account. If you don't already have one, create an account at https://github.com/join before continuing.
+
+> 💡 New to GitHub? Account creation only takes a few minutes.
+
+## Option 1: Using Github codespaces
+
+We recommend completing this tutorial in GitHub Codespaces. Codespaces provides a ready-to-use development environment directly in your browser, eliminating the need to install software locally.
+
+Advantages include:
+
+- Consistent setup for all participants
+- No local installation required
+- Direct access to the tutorial files
+- Integrated VS Code experience
+
+All credits go to the people of Eco-flow. I used their workflow and adapted it. You can follow theirs too: 
 nice set up: [Eco_flow_set_up_codespaces](https://eco-flow.github.io/training/setup/)
 documentation by github: [Codespaces_GitHub](https://docs.github.com/en/codespaces/quickstart)
+
+### Start Your Codespace
+
+1. Open the repository:
+   [https://github.com/YOUR-ORG/YOUR-REPO](https://github.com/MarioDriesen/Bio-informatics-workshops/edit/main/Level-1-Foundations/01-Setup-Your-Environment/README.md)
+
+2. Click **Code**.
+
+3. Select the **Codespaces** tab.
+
+4. Choose **Create codespace on main**.
+
+5. Wait for the environment to build and open in your browser.
+
+<img width="933" height="624" alt="image" src="https://github.com/user-attachments/assets/bfa5f793-d93b-4894-a615-320a4e7dd409" />
+
+## Getting Familiar with Your Codespace
+
+Once the Codespace has finished loading, you'll see a browser-based version of VS Code similar to the screenshot below.
+
+<img width="950" height="917" alt="image" src="https://github.com/user-attachments/assets/c93320e2-ae4f-4c26-bbcc-e673eebf0022" />
+
+## Getting Familiar with Your Codespace
+
+![Bioinformatics Workshops Codespacespace is divided into several key areas:
+
+### 1. Activity Bar (far left)
+
+The vertical icon bar gives access to important tools:
+
+- **Explorer** 📁: Browse project files and folders.
+- **Search** 🔍: Find text across the repository.
+- **Source Control** 🌿: View Git changes and commits.
+- **Extensions** 🧩: Manage VS Code extensions.
+
+For most of this workshop, you'll mainly use the Explorer and Source Control views.
+
+### 2. Explorer Panel
+
+The Explorer displays the workshop structure:
+
+Bio-informatics-workshops/ ├── .devcontainer/ ├── Level-1-Foundations/ ├── Level-2-Sequence-Data/ ├── Level-3-Workflows/ └── README.md
+
+Each level contains learning material, exercises, and example files. 
+> 💡 If you're unsure where to start, open `README.md` and follow the roadmap.
+
+### 3. Editor Area 
+
+The central area is where files are opened. 
+In this screenshot, `README.md` is displayed as a rendered Markdown preview rather than raw text. 
+
+You can: 
+- Open files by clicking them in the Explorer.
+- Switch between tabs at the top.
+- Edit documents and scripts.
+- Preview Markdown files.
+
+### 4. Terminal 
+
+The terminal appears in the lower panel. 
+This is where you'll run Linux commands, execute analyses, and work with Git. In the screenshot, the prompt shows: 
+
+```bash
+/workspaces/Bio-informatics-workshops
+```
+Try it yourself:
+```bash
+pwd
+```
+this command should return a path ending in:
+```bash
+Bio-informatics-workshops
+```
+
+### 5. Copilot Chat
+
+On the right-hand side you'll find GitHub Copilot Chat.
+
+You can use it to:
+
+- Explain commands
+- Debug errors
+- Generate code snippets
+- Ask questions about files in the repository
+
+>[!WARNING]
+>Copilot is a helpful assistant, but always verify important scientific, bioinformatics, or analytical results yourself.]
+
+### 6. Status Bar
+
+The bar at the bottom of the window displays useful information such as:
+
+- Current Git branch
+- Connection status
+- Active environment
+- Notifications and warnings
+- Quick Orientation Checklist
+
+---
+
+Before continuing, make sure you can:
+
+- [] Open a file from the Explorer
+- [] Preview a Markdown document
+- [] Open a terminal
+- [] Run pwd
+- [] Locate the workshop folders
+- [] Find the README roadmap
+
+> [!TIP]
+> 🎉 Great work! Now you're ready to continue to **[02 - Basic Linux Commands](../02-Basic-Linux-Commands/README.md).
+
 ## Option 2: Install Ubuntu on Your Computer (Permanent or Live USB)
 
 If you want the full Linux experience, you can install Ubuntu directly on your computer or run it from a USB drive without modifying your existing operating system.
