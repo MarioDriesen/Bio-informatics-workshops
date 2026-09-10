@@ -32,10 +32,22 @@ conda activate amplicon-tutorial
 ```
 *SeqKit might be helpful. Indeed, Seqkit is an ultrafast, lightweight "Swiss army knife" for manipulating FASTA and FASTQ files, making it exceptionally useful for amplicon profiling and other marker-gene sequencing workflows*
 
-#### 0.b Downloading data
+#### 0.b Create the folders
+```
+mkdir -p data
+mkdir -p results
+mkdir -p database
+```
+> [!NOTE]
+> Be sure to create the folders in a path that you're familiar with.
+---
+
+#### 0.c Downloading data
 ```
 prefetch SRR12345678
-fastq-dump --split-files SRR12345678
+fastq-dump SRR12345678 \
+           --split-files \
+           -o data/
 ```
 <img width="1142" height="677" alt="fastqcfiles" src="https://github.com/user-attachments/assets/a099555e-339a-45c5-9852-14bd1275e2c0" />
 
@@ -46,18 +58,21 @@ fastq-dump --split-files SRR12345678
 ### 1. Quality check (FastQC)
 
 ```
-fastqc SRR12345678_1.fastq SRR12345678_2.fastq -o results/
+fastqc data/SRR12345678_1.fastq \
+       data/SRR12345678_2.fastq \
+       -o results/
 ```
 <img width="983" height="435" alt="fastqc" src="https://github.com/user-attachments/assets/cc1fe362-090d-45db-aa50-fdbc8160ded0" />
 
-> [!NOTE]
+> [!WARNING]
 > This image is currently being created.
 ---
 
 ### 2. Adapter & quality trimming (Trim Galore)
 
 ```
-trim_galore --paired SRR12345678_1.fastq SRR12345678_2.fastq -o results/
+trim_galore --paired SRR12345678_1.fastq \
+            SRR12345678_2.fastq -o results/
 ```
 
 ---
