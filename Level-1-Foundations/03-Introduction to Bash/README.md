@@ -1,6 +1,6 @@
-# Part 2: Introduction to Bash Scripting
+# Part 3: Introduction to Bash Scripting
 
-In Part 1, you learned how to navigate a Linux environment and run individual commands. In Part 2, you will combine commands, store information in variables, create reusable Bash and Python scripts, and apply these skills by installing Nextflow.
+In Part 2, you learned how to navigate a Linux environment and run individual commands. In Part 2, you will combine commands, store information in variables, create reusable Bash and Python scripts, and apply these skills by installing Nextflow.
 
 > [!NOTE]
 > This tutorial assumes that you are working in a Linux terminal, such as the terminal provided by GitHub Codespaces.
