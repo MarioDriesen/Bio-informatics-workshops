@@ -1303,10 +1303,7 @@ check_nextflow.sh
 
 You are now ready to continue to the next workshop:
 
-➡️ [Continue to the Introduction to Nextflow](../03-Introduction-to-Nextflow/README.md)
-
-> [!NOTE]
-> Replace the relative link above if your next tutorial uses a different folder name or location.
+➡️ [Continue to the Introduction to Nextflow](../Leel-3-Workflows/README.md)
 
 ---
 
@@ -1322,8 +1319,7 @@ You are now ready to continue to the next workshop:
 
 ## Acknowledgements
 
-This tutorial was developed for the Bio-informatics Workshops repository and was informed by existing introductory Linux and Bash training material. Add the names and links of the original authors or projects here if you adapted their examples or teaching structure.
-
-Suggested wording:
-
-> Parts of this lesson were inspired by training material from [ORIGINAL PROJECT OR AUTHORS]. The material was rewritten and expanded for the Bio-informatics Workshops repository. We thank the original authors for making their educational resources available.
+This tutorial was developed for the Bio-informatics Workshops repository and was informed by existing introductory Linux and Bash training material. 
+- [Bash Scripting Fundamentals](https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/)
+- [Eco-flow](https://eco-flow.github.io/training/commandline/)
+- [Maxence Jacquet's genome class repository](https://github.com/Max-Jacq/learn-genomics-in-linux/tree/master/task1)
