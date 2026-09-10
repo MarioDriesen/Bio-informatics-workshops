@@ -1303,7 +1303,7 @@ check_nextflow.sh
 
 You are now ready to continue to the next workshop:
 
-➡️ [Continue to the Introduction to Nextflow](../Bio-informatics-workshop/Level-3-Workflows/README.md)
+➡️ [Continue to the Introduction to Nextflow](Bio-informatics-workshop/Level-3-Workflows/README.md)
 
 ---
 
