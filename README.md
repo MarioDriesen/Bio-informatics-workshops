@@ -11,28 +11,25 @@ and a folder containing a list of useful tools we compile over the years.
 ## Roadmap
 
 ### Level 1 - Foundations
-
+[Level 1 - Foundations](../workspaces/Bio-informatics-workshops/Level-1-Foundations/README.md)
 1. Introduction to Linux & GitHub Codespaces
    - Basic command line
    - File navigation
    - Running analyses in Codespaces
 
 ### Level 2 - Sequence Data
-
+[Level 2 - Sequence Data](../workspaces/Bio-informatics-workshops/Level-2-Sequence-Data/README.md)
 2. From Genes to FASTQ
    - Sequencing basics
    - FASTQ format
    - Quality control
-
-### Level 3 - Analysis
-
-3. How to analyse genetic data
+   How to analyse genetic data
    - Mapping
    - Variant calling
    - Assembly
 
-### Level 4 - Workflows
-
+### Level 3 - Workflows
+[Level 3 - Worksflows with Nextflow](../workspaces/Bio-informatics-workshops/Level-3-Workflows/README.md)
 4. Nextflow
    - Why workflows matter
    - Running existing pipelines
