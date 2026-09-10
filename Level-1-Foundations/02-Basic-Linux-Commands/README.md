@@ -40,7 +40,9 @@ Official repository:
 1. Fork or open the GameShell repository.
 2. Click **Code** → **Codespaces** → **Create codespace on main**.
 3. Once the terminal opens, run:
-
+```bash
+bash start.sh
+```
 
 # 1. Learning the Linux shell
 
@@ -62,7 +64,7 @@ We will be learning basic commands, but BASH is actually a language that can per
 ## Getting Started
 
 Before you can begin with the coding exercises, you must have access to a linux machine. <br>
-You can either use your own local system or a remote server <!--VM--> that has been set up for you. <br>
+You can either use your own local system, github codespaces or a remote server <!--VM--> that has been set up for you. <br>
 
 ## Once you are logged on | Learning the command-line
 
@@ -386,5 +388,5 @@ Q9 - How many times does the word "AATGAGAGG" occur in the genome sequence? Do n
 
 Q10 - What is the answer to the above question if you also include matches on the reverse complement of the genome sequence? Again, do not use compseq to answer this one.
 
-
-#### Congratulations. You are now finished.
+> [!tip]
+> #### Congratulations. You are now finished.
