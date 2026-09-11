@@ -16,6 +16,7 @@ conda install -y -c bioconda -c conda-forge fastqc cutadapt trim-galore pear vse
 
 echo "Installing reference database"
 
+cd /workspaces/training/eco-flow-training
 mkdir -p database
 
 # SILVA database will be downloaded here
