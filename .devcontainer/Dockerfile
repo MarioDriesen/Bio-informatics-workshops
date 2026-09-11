@@ -35,4 +35,19 @@ RUN Rscript -e "install.packages(c('BiocManager'))"
 
 RUN Rscript -e "BiocManager::install('DESeq2')"
 
+# Installation of Miniforge/Conda for the Level-2-Sequence-Data
+RUN curl -L -o /tmp/miniforge.sh \
+    https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
+    bash /tmp/miniforge.sh -b -p /opt/conda && \
+    rm /tmp/miniforge.sh && \
+    /opt/conda/bin/conda config --system --add channels defaults && \
+    /opt/conda/bin/conda config --system --add channels bioconda && \
+    /opt/conda/bin/conda config --system --add channels conda-forge && \
+    /opt/conda/bin/conda config --system --set channel_priority strict
+
+ENV PATH="/opt/conda/bin:${PATH}"
+
+# Installation of bioinformatics tools for the 16S amplicon level
+RUN conda install -y fastqc cutadapt trim-galore pear vsearch && conda clean -afy
+
 USER vscode
