@@ -3,7 +3,7 @@
 ---
 > # Level 2 - Amplicon Sequencing Analysis
 
-This second level guides through a small and complete workflow for amplicon sequencing data (16S/18S/ITS)
+This second level guides through a small and complete workflow for amplicon sequencing data (16S)
 
 ## Learning Objectives
 
@@ -14,7 +14,7 @@ After completing this level, you should be able to:
 - Performing trimming and filtering
 - Merging paired-end reads
 - Performing denoising and dereplication
-- Generating OTUs/ASVs
+- Generating ASVs (You can explore the OTUs on your own)
 - Detecting chimeras
 - Performing taxonomic classification
 - Building an abundance table
@@ -60,7 +60,7 @@ fastq-dump SRR12345678 \
 ```
 fastqc data/SRR12345678_1.fastq \
        data/SRR12345678_2.fastq \
-       --outdir results/
+       --outdir results/fastqc_raw/
 ```
 <img width="983" height="435" alt="fastqc" src="https://github.com/user-attachments/assets/cc1fe362-090d-45db-aa50-fdbc8160ded0" />
 
@@ -73,19 +73,23 @@ fastqc data/SRR12345678_1.fastq \
 ```
 trim_galore --paired \
             --quality 20 \
-            --length 20 \
+            --length 50 \
             --output_dir results/trimmed/ \
             data/SRR12345678_1.fastq \
             data/SRR12345678_2.fastq
 ```
 
 ---
-### 2.bis Primer Removal (?)
+### 3. Primer Removal - 515F/806R
+#### Forward
+`GTGYCAGCMGCCGCGGTAA`
+#### Reverse
+`GGACTACNVGGGTWTCTAAT`
 
 ```
 cutadapt \
-    -g ^FORWARD_PRIMER \
-    -G ^REVERSE_PRIMER \
+    -g ^GTGYCAGCMGCCGCGGTAA \
+    -G ^GGACTACNVGGGTWTCTAAT \
     -o results/trimmed/SRR12345678_1.primertrimmed.fastq \
     -p results/trimmed/SRR12345678_2.primertrimmed.fastq \
     results/trimmed/SRR12345678_1_val_1.fq \
@@ -94,7 +98,7 @@ cutadapt \
 
 ---
 
-### 3. Check the quality after trimming
+### 4. Check the quality after trimming
 ```
 fastqc \
     results/trimmed/SRR12345678_1.primertrimmed.fastq \
@@ -104,7 +108,7 @@ fastqc \
 
 ---
 
-### 4. Paired-end merging (PEAR)
+### 5. Paired-end merging (PEAR)
 
 ```
 pear -f results/SRR12345678_1.primertrimmed.fastq \
@@ -114,9 +118,9 @@ pear -f results/SRR12345678_1.primertrimmed.fastq \
 
 ---
 
-### 5. OTU/ASV Workflow with VSEARCH
-#### 5.1 UNOISE3 / ASV
-##### 5.1.a Quality filtering of assembled reads
+### 6. OTU/ASV Workflow with VSEARCH
+#### 6.1 UNOISE3/ASV
+##### 6.1.a Quality filtering of assembled reads
 ```
 vsearch --fastq_filter results/SRR12345678.assembled.fastq \
         --fastq_maxee 1.0 \
@@ -125,7 +129,7 @@ vsearch --fastq_filter results/SRR12345678.assembled.fastq \
 
 ---
 
-##### 5.1.b Dereplication
+##### 6.1.b Dereplication
 ```
 vsearch --derep_fulllength results/filtered.fasta \
         --output results/derep.fasta \
@@ -134,26 +138,28 @@ vsearch --derep_fulllength results/filtered.fasta \
 
 ---
 
-##### 5.1.c Denoising (UNOISE3/ASVs)
+##### 6.1.c Denoising (UNOISE3/ASVs)
 ```
 vsearch --cluster_unoise results/derep.fasta \
         --centroids results/zotus.fasta
         --minsize 8
 ```
 *UNOISE3 attempts to distinguish true biological variants from sequencing errors*
+
 ---
 
-##### 5.1.d Chimera Removal
+##### 6.1.d Chimera Removal
 ```
 vsearch --uchime3_denovo results/zotus.fasta \
         --nonchimeras results/zotus.nochim.fasta \
         --chimeras results/zotus.chimera.fasta
 ```
-`results/zotus.nochim.fasta becomes our final set of sequences`
+*`results/zotus.nochim.fasta` becomes our final set of sequences*
+
 ---
 
-#### 5.2 Alternatively, for OTUs (97% identity)
-##### 5.2.a
+#### 6.2 Alternatively, for OTUs (97% identity)
+##### 6.2.a
 ```
 vsearch --cluster_size results/derep.fasta \
         --id 0.97 \
@@ -163,7 +169,7 @@ vsearch --cluster_size results/derep.fasta \
 
 ---
 
-##### 5.2.b Chimera Removal
+##### 6.2.b Chimera Removal
 ```
 vsearch --uchime3_denovo results/otus.fasta \
         --nonchimeras results/otus.nochim.fasta \
@@ -172,24 +178,32 @@ vsearch --uchime3_denovo results/otus.fasta \
 
 ---
 
-### 6. Taxonomic classification (SINTAX in VSEARCH).
+### 7. Taxonomic classification (SINTAX in VSEARCH) via the UNOISE3 way
 > [!WARNING]
 > You need a reference database (e.g., SILVA, RDP, UNITE) formatted for VSEARCH. here you can find the databases https://zenodo.org/records/14930035
-#### 6.a Generate a fasta file from a fastq file
 ```
-vsearch --fastq_filter results/merged.assembled.fastq \
-        --fastaout results/merged.assembled.fasta
+vsearch --sintax results/zotus.nochim.fasta \
+        --db database/silva.udb \
+        --tabbedout results/zotus.sintax \
+        --sintax_cutoff 0.8
 ```
-#### 6.b Generate the abundance table
+
+---
+
+### 8. Generate the abundance table via the UNOISE3 way
 ```
-vsearch --usearch_global results/merged.assembled.fastq \
-        --db results/otus.nochim.fasta \
+vsearch --usearch_global results/filtered.fasta \
+        --db results/zotus.nochim.fasta \
         --id 0.97 \
-        --otutabout results/otu_table.txt
+        --otutabout results/zotu_table.txt
 ```
-#### 5.c Merge your abundance table and taxonomy table
+
+---
+
+### 9. Merge your abundance table and taxonomy table
 ```
-paste results/otu_table.txt results/otus.sintax > results/otu_table_taxonomy.txt
+paste results/zotu_table.txt results/zotus.sintax > results/zotu_table_taxonomy.txt
 ```
-_With your otu_table_taxonomy.txt, you are able to analyse it on R or excel_
+*With your zotu_table_taxonomy.txt, you are able to analyse it on R or excel*
+
 ---
