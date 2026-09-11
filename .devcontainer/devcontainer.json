@@ -7,7 +7,7 @@
                 "moby": false
             }
         },
-    "postCreateCommand": "printf 'unset JAVA_TOOL_OPTIONS\\ncd /workspaces/training/eco-flow-training\\n' >> $HOME/.bashrc && cat ${containerWorkspaceFolder}/.bash_profile >> $HOME/.bash_profile",
+    "postCreateCommand": "printf 'unset JAVA_TOOL_OPTIONS\\ncd /workspaces/training/eco-flow-training\\n' >> $HOME/.bashrc && cat ${containerWorkspaceFolder}/.bash_profile >> $HOME/.bash_profile && bash .devcontainer/setup.sh",
     "postStartCommand": "docker pull -q nf-core/rnaseq || true",
     "customizations": {
         "vscode": {
