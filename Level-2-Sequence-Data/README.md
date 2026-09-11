@@ -47,7 +47,7 @@ mkdir -p database
 prefetch SRR12345678
 fastq-dump SRR12345678 \
            --split-files \
-           -o data/
+           --outdir data/
 ```
 <img width="1142" height="677" alt="fastqcfiles" src="https://github.com/user-attachments/assets/a099555e-339a-45c5-9852-14bd1275e2c0" />
 
@@ -60,7 +60,7 @@ fastq-dump SRR12345678 \
 ```
 fastqc data/SRR12345678_1.fastq \
        data/SRR12345678_2.fastq \
-       -o results/
+       --outdir results/
 ```
 <img width="983" height="435" alt="fastqc" src="https://github.com/user-attachments/assets/cc1fe362-090d-45db-aa50-fdbc8160ded0" />
 
@@ -74,7 +74,7 @@ fastqc data/SRR12345678_1.fastq \
 trim_galore --paired \
             --quality 20 \
             --length 20 \
-            -o results/trimmed/ \
+            --output_dir results/trimmed/ \
             data/SRR12345678_1.fastq \
             data/SRR12345678_2.fastq
 ```
@@ -107,36 +107,67 @@ fastqc \
 ### 4. Paired-end merging (PEAR)
 
 ```
-pear -f results/SRR12345678_1_val_1.fq.gz \
-     -r results/SRR12345678_2_val_2.fq.gz \
-     -o results/merged
+pear -f results/SRR12345678_1.primertrimmed.fastq \
+     -r results/SRR12345678_2.primertrimmed.fastq \
+     -o results/SRR12345678
 ```
 
 ---
 
 ### 5. OTU/ASV Workflow with VSEARCH
-#### 5.a Dereplication
+#### 5.1 UNOISE3 / ASV
+##### 5.1.a Quality filtering of assembled reads
 ```
-vsearch --derep_fulllength results/merged.assembled.fastq \
+vsearch --fastq_filter results/SRR12345678.assembled.fastq \
+        --fastq_maxee 1.0 \
+        --fastaout results/filtered.fasta
+```
+
+---
+
+##### 5.1.b Dereplication
+```
+vsearch --derep_fulllength results/filtered.fasta \
         --output results/derep.fasta \
         --sizeout
 ```
-#### 5.b Denoising (UNOISE3 for zOTUs/ASVs)
+
+---
+
+##### 5.1.c Denoising (UNOISE3/ASVs)
 ```
 vsearch --cluster_unoise results/derep.fasta \
-        --minsize 8 \
-        --unoise3 results/zotus.fasta
+        --centroids results/zotus.fasta
+        --minsize 8
 ```
-Alternatively, for OTUs (97% identity):
+*UNOISE3 attempts to distinguish true biological variants from sequencing errors*
+---
+
+##### 5.1.d Chimera Removal
+```
+vsearch --uchime3_denovo results/zotus.fasta \
+        --nonchimeras results/zotus.nochim.fasta \
+        --chimeras results/zotus.chimera.fasta
+```
+`results/zotus.nochim.fasta becomes our final set of sequences`
+---
+
+#### 5.2 Alternatively, for OTUs (97% identity)
+##### 5.2.a
 ```
 vsearch --cluster_size results/derep.fasta \
         --id 0.97 \
-        --centroids results/otus.fasta
+        --centroids results/otus.fasta \
+        --relabel OTU_
 ```
-#### 5.c Chimera Removal
+
+---
+
+##### 5.2.b Chimera Removal
 ```
-vsearch --uchime3_denovo results/zotus.fasta \
-        --nonchimeras results/zotus.nochim.fasta
+vsearch --uchime3_denovo results/otus.fasta \
+        --nonchimeras results/otus.nochim.fasta \
+        --chimeras results/otus.chimera.fasta
 ```
 
 ---
