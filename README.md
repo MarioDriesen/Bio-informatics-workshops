@@ -31,12 +31,11 @@ and a folder containing a list of useful tools we compile over the years.
    - Assembly
 
 ### Level 3 - Workflows
-[Level 3 - Worksflows with Nextflow](../workspaces/Bio-informatics-workshops/Level-3-Workflows/README.md)
+[Level 3 - Workflows with Nextflow](../workspaces/Bio-informatics-workshops/Level-3-Workflows/README.md)
 
-4. Nextflow
-   - Why workflows matter
-   - Running existing pipelines
-   - Building simple pipelines
+3. Nextflow & nf-core pipelines
+   - Running an nf-core pipeline (nf-core/ampliseq, amplicon sequencing)
+   - Running a pipeline on an HPC (Slurm/SGE via Nextflow)
 
 ### Resources
 
