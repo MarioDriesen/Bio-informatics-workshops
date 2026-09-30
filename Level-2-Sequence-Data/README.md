@@ -194,6 +194,7 @@ vsearch --usearch_global results/filtered.fasta \
         --id 0.97 \
         --otutabout results/zotu_table.txt
 ```
+To learn more about vsearch: https://github.com/torognes/vsearch
 
 ---
 
