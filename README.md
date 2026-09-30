@@ -1,6 +1,3 @@
-> [!WARNING]
-> Warning: This section is currently being updated.
----
 # Bioinformatics Workshops
 
 A collection of self-guided workshops covering practical bioinformatics skills.
