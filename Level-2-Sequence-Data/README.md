@@ -75,6 +75,7 @@ trim_galore --paired \
             data/SRR12345678_1.fastq \
             data/SRR12345678_2.fastq
 ```
+To learn more about Trim Galore: https://github.com/felixkrueger/trimgalore#------------
 
 ---
 ### 3. Primer Removal - 515F/806R
