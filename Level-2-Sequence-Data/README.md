@@ -1,9 +1,3 @@
-> [!WARNING]
-> Warning: This section is currently being updated.
-> 
-
----
-
 # Level 2 - Amplicon Sequencing Analysis
 
 This second level guides through a small and complete workflow for amplicon sequencing data (16S)
@@ -69,11 +63,7 @@ fastqc data/SRR12345678_1.fastq \
        data/SRR12345678_2.fastq \
        --outdir results/fastqc_raw/
 ```
-<img width="983" height="435" alt="fastqc" src="https://github.com/user-attachments/assets/cc1fe362-090d-45db-aa50-fdbc8160ded0" />
-
-> [!WARNING]
-> This image is currently being created.
----
+<img width="6000" height="4200" alt="Fastqc" src="https://github.com/user-attachments/assets/872a9150-5137-4d74-a030-5a2883cf2105" />
 
 ### 2. Adapter & quality trimming (Trim Galore)
 
