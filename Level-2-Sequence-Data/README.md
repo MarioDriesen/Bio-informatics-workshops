@@ -90,7 +90,7 @@ cutadapt \
     results/trimmed/SRR12345678_1_val_1.fq \
     results/trimmed/SRR12345678_2_val_2.fq
 ```
-To learn more about Cutadapt: doc/guide.rst
+To learn more about Cutadapt: [doc/guide.rst](https://github.com/marcelm/cutadapt/blob/main/doc/guide.rst)
 
 ---
 
