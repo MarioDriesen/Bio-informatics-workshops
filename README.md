@@ -16,7 +16,7 @@ and a folder containing a list of useful tools we compile over the years.
    - Running analyses in Codespaces
 
 ### Level 2 - Sequence Data
-[Level 2 - Sequence Data](../workspaces/Bio-informatics-workshops/Level-2-Sequence-Data/README.md)
+[Level 2 - Sequence Data](Level-2-Sequence-Data/README.md)
 
 2. From Genes to FASTQ
    - Sequencing basics
