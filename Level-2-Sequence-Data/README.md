@@ -90,7 +90,7 @@ cutadapt \
     results/trimmed/SRR12345678_1_val_1.fq \
     results/trimmed/SRR12345678_2_val_2.fq
 ```
-To learn more about Cutadapt: doc/guide.rst <img width="583" height="343" alt="images" src="https://github.com/user-attachments/assets/7ec3b988-ab37-4703-9cf8-c26d8bfd11cb" />
+To learn more about Cutadapt: doc/guide.rst
 
 ---
 
