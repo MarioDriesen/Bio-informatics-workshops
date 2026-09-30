@@ -78,10 +78,8 @@ trim_galore --paired \
 
 ---
 ### 3. Primer Removal - 515F/806R
-#### Forward
-`GTGYCAGCMGCCGCGGTAA`
-#### Reverse
-`GGACTACNVGGGTWTCTAAT`
+#### Forward `GTGYCAGCMGCCGCGGTAA`
+#### Reverse `GGACTACNVGGGTWTCTAAT`
 
 ```
 cutadapt \
